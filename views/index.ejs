@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="site" ng-controller="mainCtrl">
+	<head>
+		<meta charset="utf-8">
+		<title><%= title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="/css/index.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container-narrow">
+			<div class="masthead">
+				<ul class="nav nav-pills pull-right">
+					<li ng-class="{active: $location.path() == '/'}"><a href="#">Accueil</a></li>
+					<li ng-class="{active: $location.path() == '/a-propos'}"><a href="#">À propos</a></li>
+					<li ng-class="{active: $location.path() == '/contact'}"><a href="#">Contact</a></li>
+					<li ng-class="{active: $location.path() == '/connexion'}"><a href="#/connexion">Connexion</a></li>
+				</ul>
+				<h3 class="muted text-error">Projet Fil Rouge</h3>
+			</div>
+			<hr>
+
+			<div ng-view></div>
+
+			<hr>
+			<div class="footer">
+				<p>&copy; Yacine Rezgui 2012</p>
+			</div>
+		</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+	<script>
+		window.jQuery					|| document.write('<script src="/js/jquery-1.8.2.js"><\/script>');
+		window.angular					|| document.write('<script src="/js/angular-1.0.2.js"><\/script>');
+		window.jQuery('body').popover	|| document.write('<script src="/js/bootstrap-2.2.1.js"><\/script>');
+	</script>
+		<script src="/js/site.js"></script>
+	</body>
+</html>

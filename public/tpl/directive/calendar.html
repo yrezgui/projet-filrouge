@@ -1,0 +1,41 @@
+<div class="row-fluid calendar">
+	<div class="row">
+		<div class="day name">Dimanche</div>
+		<div class="day name">Lundi</div>
+		<div class="day name">Mardi</div>
+		<div class="day name">Mercredi</div>
+		<div class="day name">Jeudi</div>
+		<div class="day name">Vendredi</div>
+		<div class="day name">Samedi</div>
+	</div>
+	<div class="row week" ng-repeat="week in calendar.weeks">
+		<div ng-repeat="day in week" ng-switch on="day.status">
+			<div ng-switch-when="weekend" class="day weekend">{{day.number}}</div>
+			<div ng-switch-when="out" class="day out"></div>
+			<div
+				ng-switch-default
+				class="day normal"
+				ng-click="redirect('/rdv/list/' + model.idMedic + '/' + model.year + '/' + model.month + '/' + day.number)"
+				ng-class="{middle: day.count >= 16 && day.count < 24, full: day.count >= 24}"
+			>
+				{{day.number}}
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<small>* Données factices</small>
+	<h5>Légende</h5>
+	<div class="row">
+		<div class="day" style="background-color: #59b2f0; color: #ffffff;">27 mars</div>
+		<div class="span5" style="padding-top:5px">Jour occupé à moins de 50% survolé</div>
+	</div>
+	<div class="row">
+		<div class="day middle">5 juin</div>
+		<div class="span5" style="padding-top: 5px;">Jour occupé entre 50% et 75%</div>
+	</div>
+	<div class="row">
+		<div class="day full">13 mai</div>
+		<div class="span5" style="padding-top: 5px;">Jour occupé à plus de 75%</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row-fluid">
+	<div class="alert alert-error" ng-show="error">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+		<strong>Erreur</strong>
+		<br>
+		{{error}}
+	</div>
+	<div class="alert alert-success" ng-show="success">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+		<strong>Succès</strong>
+		<br>
+		{{success}}
+	</div>
+	<form ng-submit="login()" class="form-horizontal" style="">
+
+		<h2 class="form-signin-heading">Connectez-vous</h2>
+		<div class="control-group">
+			<label class="control-label">Email</label>
+			<div class="controls">
+				<input type="text" ng-model="email" placeholder="b.dupont@gmail.com">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Mot de passe</label>
+			<div class="controls">
+				<input type="password" ng-model="password" placeholder="******">
+			</div>
+		</div>
+		<div class="form-actions">
+			<input class="btn btn-primary" type="submit" ng-model="sendButton" ng-disabled="sendButtonDisabled">
+		</div>
+	</form>
+</div>

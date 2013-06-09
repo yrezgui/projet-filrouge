@@ -1,0 +1,120 @@
+body {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+/* Custom container */
+.container-narrow {
+	margin: 0 auto;
+	max-width: 800px;
+}
+.container-narrow > hr {
+	margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+	margin: 60px 0;
+	text-align: center;
+}
+.jumbotron h1 {
+	font-size: 72px;
+	line-height: 1;
+}
+.jumbotron .btn {
+	font-size: 21px;
+	padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+	margin: 60px 0;
+}
+.marketing p + h4 {
+	margin-top: 28px;
+}
+
+/* calendar directive */
+.calendar .day{
+	float: left;
+	width: 12%;
+	padding: 7px;
+	text-align: center;
+}
+
+.calendar .day.normal{
+	cursor: pointer;
+}
+
+.calendar .day.normal a{
+	text-decoration: none;
+}
+
+.calendar .day.normal:hover{
+	background-color: #59b2f0;
+	color: #ffffff;
+}
+
+.calendar .day.middle{
+	background-color: #fcb17f;
+	color: #ffffff;
+}
+
+.calendar .day.middle:hover{
+	background-color: #fc9a58;
+}
+
+.calendar .day.full{
+	background-color: #e98f89;
+	color: #ffffff;
+}
+
+.calendar .day.full:hover{
+	background-color: #eb6057;
+}
+
+.calendar .day.weekend {
+	background-color: #dce0dc;
+	color: #a6a6a6;
+}
+
+/* timepicker directive */
+.timetable .hour.name{
+	background-color: #dce0dc;
+	/*color: #a6a6a6;*/
+	color: black;
+	font-weight: bold;
+}
+
+.timetable .quarter{
+	float: left;
+	width: 23%;
+	padding: 7px;
+	text-align: center;
+}
+
+.timetable .quarter.full{
+	background-color: #e98f89;
+	color: #ffffff;
+}
+
+.timetable .quarter.normal{
+	cursor: pointer;
+}
+
+.timetable .quarter.normal a{
+	text-decoration: none;
+}
+
+.timetable .quarter.normal:hover{
+	background-color: #59b2f0;
+	color: #ffffff;
+}

@@ -1,0 +1,30 @@
+<div class="row-fluid">
+	<div class="control-group">
+		<label class="control-label" for="inputIcon">Rechercher un docteur</label>
+		<div class="controls">
+			<div class="input-prepend">
+				<span class="add-on"><i class="icon-search"></i></span>
+				<input id="inputIcon" type="text" ng-model="searchText">
+			</div>
+		</div>
+	</div>
+	<br>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Médecin</th>
+				<th>Pôle d'activité</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="doctor in doctors | filter: searchText">
+				<td style="text-transform: capitalize;">{{doctor.user.firstname}} {{doctor.user.lastname}}</td>
+				<td style="text-transform: capitalize;"><span class="label label-success">{{doctor.service.name}}</span> {{doctor.speciality.name}}</td>
+				<td>
+					<a href="#/rdv/list/{{doctor.idUser}}/0/0" class="btn btn-info"><i class="icon-white icon-calendar"></i> Prendre un RDV</a> 
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

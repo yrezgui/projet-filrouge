@@ -1,0 +1,39 @@
+<div class="row-fluid">
+	<div class="pull-right">
+		<div class="btn-group">
+			<button class="btn btn-info dropdown-toggle" data-toggle="dropdown"> <i class="icon-plus"></i> Ajouter un utilisateur</button>
+			<ul class="dropdown-menu">
+				<li><a href="#/admins/admins/edit/">Administrateur</a></li>
+				<li><a href="#/admins/patients/edit/">Patient</a></li>
+				<li><a href="#/admins/secretaries/edit/">Secrétaire</a></li>
+				<li><a href="#/admins/medics/edit/">Médecin</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="inputIcon">Rechercher un utilisateur</label>
+		<input type="text" ng-model="searchText">
+	</div>
+	<br>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Pôle d'activité</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="doctor in doctors | filter:searchText">
+				<td style="text-transform: capitalize;">{{doctor.user.firstname}} {{doctor.user.lastname}}</td>
+				<td>{{doctor.service.name}} - {{doctor.speciality.name}}</td>
+				<td>
+					<div class="btn-group">
+						<a href="#/admins/medics/edit/{{doctor.idUser}}" class="btn"><i class="icon-pencil"></i> Modifier</a>
+						<button class="btn btn-danger"><i class="icon-remove"></i> Supprimer</button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

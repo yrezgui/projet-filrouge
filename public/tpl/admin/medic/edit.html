@@ -1,0 +1,86 @@
+<div class="row-fluid">
+	<h1 ng-switch on="id.length">
+		<span ng-switch-when="0">Ajouter un médecin</span>
+		<span ng-switch-default>Modifier un médecin</span>
+	</h1>
+	<form class="form-horizontal" ng-init="load()">
+		<fieldset>
+			<legend>Détails</legend>
+
+			<div class="control-group">
+				<label class="control-label" for="email">Email</label>
+				<div class="controls">
+					<input type="text" name="email" ng-model="edit.email" id="email" placeholder="b.lermite@gmail.com">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="password">Mot de passe</label>
+				<div class="controls">
+					<input type="password" name="password" ng-model="edit.password" id="password" placeholder="Mon secret">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="firstname">Prénom</label>
+				<div class="controls">
+					<input type="text" name="firstname" ng-model="edit.firstname" id="firstname" placeholder="Bernard">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="lastname">Nom</label>
+				<div class="controls">
+					<input type="text" name="lastname" ng-model="edit.lastname" id="lastname" placeholder="Lermite">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="birthdate">Date de naissance</label>
+				<div class="controls" data-date="12-02-2012" data-date-format="dd-mm-yyyy" datepicker="edit.birthdate" ng-model="edit.birthdate">
+					<span>{{edit.birthdate | date:'dd/MM/yyyy' }}</span>
+					<input type="text" name="birthdate" ng-model="edit.birthdate" id="birthdate">
+					<a class="btn picker"><i class="icon-calendar"></i></a>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="service">Service</label>
+				<div class="controls">
+					<select name="service" ng-model="edit.service" ng-options="c.value for c in edit.dataservice" id="service"></select>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="speciality">Spécialité</label>
+				<div class="controls">
+					<select name="speciality" ng-model="edit.speciality" ng-options="c.value for c in edit.dataspeciality" id="speciality"></select>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="gender_man">Genre</label>
+				<div class="controls">
+					<label class="radio" for="gender_man">
+						<input type="radio" name="gender"ng-model="edit.gender" id="gender_male" value="male" checked>
+						Homme
+					</label>
+					<label class="radio" for="gender_female">
+						<input type="radio" name="gender" ng-model="edit.gender" id="gender_female" value="female">
+						Femme
+					</label>
+				</div>
+			</div>
+
+			<div class="form-actions">
+				<span ng-switch on="id.length">
+					<button class="btn btn-primary" ng-switch-when="0" ng-click="save()">Ajouter</button>
+					<button class="btn btn-primary" ng-switch-default ng-click="save()">Modifier</button>
+				</span>
+				<span>
+					<button class="btn">Annuler</button>
+				</span>
+			</div>
+		</fieldset>
+	</form>
+</div>

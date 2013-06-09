@@ -1,0 +1,6 @@
+<div ng-switch on="type">
+	<div ng-switch-when="medics" ng-include=" 'tpl/admin/medic/edit.html' " onload="medicLoad()"></div>
+	<div ng-switch-when="admins" ng-include=" 'tpl/admin/admin/edit.html' " onload="personLoad()"></div>
+	<div ng-switch-when="patients" ng-include=" 'tpl/admin/patient/edit.html' " onload="personLoad()"></div>
+	<div ng-switch-when="secretaries" ng-include=" 'tpl/admin/secretary/edit.html' " onload="personLoad()"></div>
+</div>

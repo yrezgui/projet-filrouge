@@ -1,0 +1,19 @@
+{
+	"name": "SupDoc",
+	"version": "0.3.0",
+	"dependencies": {
+		"underscore": "1.4.x",
+		"express": "3.0.x",
+		"express-resource": "1.0.x",
+		"mysql": "2.0.x",
+		"validator": "0.4.x",
+		"yuidocjs": "0.3.x",
+		"mysql-queues": "1.0.x",
+		"q": "0.9.x",
+		"socket-io": "0.9.x"
+	},
+	"engines": {
+		"node": "0.8.17",
+		"npm": "1.2.0"
+	}
+}

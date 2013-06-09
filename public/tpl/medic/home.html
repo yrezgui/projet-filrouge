@@ -1,0 +1,26 @@
+<div class="row-fluid">
+	<div class="control-group">
+		<label class="control-label" for="inputIcon">Rechercher un rendez-vous</label>
+		<div class="controls">
+			<div class="input-prepend">
+				<span class="add-on"><i class="icon-search"></i></span>
+				<input id="inputIcon" type="text" ng-model="search">
+			</div>
+		</div>
+	</div>
+	<br>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Patient</th>
+				<th>Date du rendez-vous</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="visit in rendezvous | filter: search">
+				<td style="text-transform: capitalize;">{{visit.patient.infos.firstname}}</td>
+				<td>{{ visit.infos.date | date: 'dd MMM. y' }} à <span class="text-info">{{ visit.infos.timetable }}</span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

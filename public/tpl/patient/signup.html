@@ -1,0 +1,74 @@
+<div class="row-fluid">
+	<div class="alert alert-error" ng-show="error">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+		<strong>Erreur</strong>
+		<br>
+		{{error}}
+	</div>
+	<div class="alert alert-success" ng-show="success">
+		<button type="button" class="close" data-dismiss="alert">×</button>
+		<strong>Succès</strong>
+		<br>
+		{{success}}
+	</div>
+	<form ng-submit="signup()" name="signupForm" class="form-horizontal" style="">
+
+		<h2 class="form-signin-heading">Inscrivez-vous</h2>
+		<div class="control-group">
+			<label class="control-label">Email</label>
+			<div class="controls">
+				<input type="text" name="email" ng-model="email" placeholder="b.dupont@gmail.com" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Mot de passe</label>
+			<div class="controls">
+				<input type="password" name="password" ng-model="password" placeholder="******" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Prénom</label>
+			<div class="controls">
+				<input type="text" name="firstname" ng-model="firstname" placeholder="Bernard" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Nom</label>
+			<div class="controls">
+				<input type="text" name="lastname" ng-model="lastname" placeholder="Dupont" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Genre</label>
+			<div class="controls">
+				<input type="radio" ng-model="gender" value="male">Homme
+				<input type="radio" ng-model="gender" value="female">Femme
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Date de naissance</label>
+			<div class="controls">
+				<select ng-model="day" ng-options="day for day in days" class="span2"></select>
+				<select ng-model="month">
+					<option value="01">Janvier</option>
+					<option value="02">Février</option>
+					<option value="03">Mars</option>
+					<option value="04">Avril</option>
+					<option value="05">Mai</option>
+					<option value="06">Juin</option>
+					<option value="07">Juillet</option>
+					<option value="08">Août</option>
+					<option value="09">Septembre</option>
+					<option value="10">Octobre</option>
+					<option value="11">Novembre</option>
+					<option value="12">Décembre</option>
+				</select>
+				<select ng-model="year" ng-options="year for year in years" class="span2"></select>
+			</div>
+		</div>
+		<div class="form-actions">
+			<input class="btn btn-primary" type="submit" ng-model="sendButton" ng-disabled="sendButtonDisabled">
+			<input type="reset" class="btn" value="Annuler">
+		</div>
+	</form>
+</div>

@@ -1,0 +1,70 @@
+<div class="row-fluid">
+	<h1 ng-switch on="id.length">
+		<span ng-switch-when="0">Ajouter un patient</span>
+		<span ng-switch-default>Modifier un patient</span>
+	</h1>
+	<form name="editForm" class="form-horizontal" ng-init="load()">
+		<fieldset>
+			<legend>Détails</legend>
+
+			<div class="control-group">
+				<label class="control-label" for="email">Email</label>
+				<div class="controls">
+					<input type="text" name="email" ng-model="edit.email" id="email" placeholder="b.lermite@gmail.com">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="password">Mot de passe</label>
+				<div class="controls">
+					<input type="password" name="password" ng-model="edit.password" id="password" placeholder="Mon secret">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="firstname">Prénom</label>
+				<div class="controls">
+					<input type="text" name="firstname" ng-model="edit.firstname" id="firstname" placeholder="Bernard">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="lastname">Nom</label>
+				<div class="controls">
+					<input type="text" name="lastname" ng-model="edit.lastname" id="lastname" placeholder="Lermite">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="birthdate">Date de naissance</label>
+				<div class="controls">
+					<input type="text" name="birthdate" ng-model="edit.birthdate" id="birthdate" placeholder="1985-12-25">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="gender_man">Genre</label>
+				<div class="controls">
+					<label class="radio" for="gender_man">
+						<input type="radio" name="gender"ng-model="edit.gender" id="gender_male" value="male" checked>
+						Homme
+					</label>
+					<label class="radio" for="gender_female">
+						<input type="radio" name="gender" ng-model="edit.gender" id="gender_female" value="female">
+						Femme
+					</label>
+				</div>
+			</div>
+
+			<div class="form-actions">
+				<span ng-switch on="id.length">
+					<button class="btn btn-primary" ng-switch-when="0" ng-click="save()">Ajouter</button>
+					<button class="btn btn-primary" ng-switch-default ng-click="save()">Modifier</button>
+				</span>
+				<span>
+					<button class="btn">Annuler</button>
+				</span>
+			</div>
+		</fieldset>
+	</form>
+</div>

@@ -1,0 +1,46 @@
+<div class="alert alert-error" ng-show="createNotOK">
+	<strong>Erreur !</strong><br>
+	La confirmation du rendez-vous a échoué. Une personne a déjà pris ce créneau horaire depuis le dernier affichage de cette page.
+</div>
+<div class="alert alert-success" ng-show="createOK">
+	<strong>Succès !</strong><br>
+	La confirmation du rendez-vous a été effectué.
+</div>
+<div class="row-fluid timetable">
+	<div ng-repeat="partDay in timetable">
+		<h3>{{partDay.label}}</h3>
+		<div class="row" ng-repeat="hour in partDay.slots">
+			<div ng-repeat="quarter in hour.quarters" ng-switch on="quarter.status">
+				<div ng-switch-when="full" class="quarter full">{{hour.name + 'h' + quarter.name}}</div>
+				<div ng-switch-default class="quarter normal" ng-click="createRDV(hour.name, quarter.name, partDay.index)">
+					{{hour.name + 'h' + quarter.name}}
+				</div>
+			</div>
+		</div>
+		<br>
+		<hr>
+	</div>
+	<br>
+	<br>
+	<h5>Légende</h5>
+	<div class="row">
+		<div class="quarter full">15h45</div>
+		<div class="span5" style="padding-top: 5px;">Créneau occupé</div>
+	</div>
+</div>
+<div id="modal-confirmation" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Confirmation du rendez-vous</h3>
+	</div>
+	<div class="modal-body">
+		<h5>Le rendez-vous sera le {{ calendar.getLabelDay(choosenSlot.day) }} {{choosenSlot.day}} {{ calendar.getLabelMonth(choosenSlot.month) }} {{choosenSlot.year}} à {{ choosenSlot.hour + ':' + choosenSlot.quarter }}</h5>
+		<br>
+		<p>Voulez-vous ajouter une précision au docteur pour ce rendez-vous ?</p>
+		<textarea ng-model="choosenSlot.comment" placeholder="douleurs, symptômes ressentis" style="width:95%; height:100px;"></textarea>
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal">Annuler</button>
+		<button class="btn btn-primary" ng-click="confirmRDV()">Confirmer</button>
+	</div>
+</div>

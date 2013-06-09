@@ -1,0 +1,24 @@
+<h1 class="text-center">
+	Dr. <span class="text-capitalize">{{doctor.user.firstname}} {{doctor.user.lastname}}</span>
+</h1>
+<ul class="pager">
+	<li class="previous" ng-class="{disabled: previousMonth.disabled}" ng-switch on="previousMonth.disabled">
+		<span ng-switch-when="true">
+			&larr; Mois précédent
+		</span>
+		<a ng-switch-default href="#/rdv/list/{{ date.idMedic + '/' + previousMonth.year + '/' + (previousMonth.month + 1) }}">
+			&larr; Mois précédent
+		</a>
+	</li>
+	<li>
+		<b>Agenda <span class="text-capitalize">{{date.monthLabel + ' ' + date.year}}</b>
+	</li>
+	<li class="next">
+		<a href="#/rdv/list/{{ date.idMedic + '/' + nextMonth.year + '/' + (nextMonth.month + 1) }}">
+			Mois suivant &rarr;
+		</a>
+	</li>
+</ul>
+<br>
+<br>
+<div datepicker model="date" style="width:700px; margin-left: auto; margin-right: auto; padding-left: 50px;"></div>
